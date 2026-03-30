@@ -156,3 +156,43 @@ document.querySelectorAll('.has-dropdown .dropdown a').forEach(link => {
         });
     });
 });
+// ================================================
+// BADGE GIẢM GIÁ & NÚT THÊM VÀO GIỎ HÀNG
+// ================================================
+
+document.querySelectorAll('.product-card').forEach(card => {
+
+    // --- Tính % giảm và thêm badge ---
+    const priceEl    = card.querySelector('.price');
+    const oldPriceEl = card.querySelector('.old-price');
+
+    if (priceEl && oldPriceEl) {
+        const price    = parseInt(priceEl.textContent.replace(/\D/g, ''));
+        const oldPrice = parseInt(oldPriceEl.textContent.replace(/\D/g, ''));
+
+        if (oldPrice > price) {
+            const pct = Math.round((1 - price / oldPrice) * 100);
+            const badge = document.createElement('span');
+            badge.className = 'discount-badge';
+            badge.textContent = `-${pct}%`;
+            card.prepend(badge);
+        }
+    }
+
+    // --- Thêm nút Thêm vào giỏ ---
+    const btn = document.createElement('button');
+    btn.className = 'btn-add-cart';
+    btn.textContent = 'Thêm vào giỏ';
+    btn.addEventListener('click', () => {
+        const name = card.querySelector('h3')?.textContent || 'Sản phẩm';
+        btn.textContent = '✔ Đã thêm!';
+        btn.style.background = '#28a745';
+        setTimeout(() => {
+            btn.textContent = 'Thêm vào giỏ';
+            btn.style.background = '';
+        }, 1500);
+        console.log('Đã thêm vào giỏ:', name);
+    });
+    card.appendChild(btn);
+
+});
