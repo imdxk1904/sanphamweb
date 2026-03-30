@@ -116,12 +116,12 @@ hr { display: none; }
     font-size: 13px;
     font-family: sans-serif;
     outline: none;
-    width: 180px;
+    width: 140px;
     transition: background 0.2s, width 0.3s;
 }
 
 .navbar-search input::placeholder { color: rgba(255, 255, 255, 0.6); }
-.navbar-search input:focus { background: rgba(255, 255, 255, 0.22); width: 220px; }
+.navbar-search input:focus { background: rgba(255, 255, 255, 0.22); width: 170px; }
 
 .navbar-search button {
     position: absolute;
@@ -654,4 +654,12 @@ header > nav li.has-dropdown:last-child .dropdown {
 
 .btn-add-cart:active {
     transform: translateY(0);
+}
+@media (max-width: 1050px) and (min-width: 901px) {
+    .navbar-search { display: none; }
+}
+@media (max-width: 1050px) and (min-width: 901px) {
+    .navbar-search,
+    .navbar-cart { display: none; }
+    .hamburger { display: flex; }
 }
