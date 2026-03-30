@@ -148,3 +148,11 @@ document.addEventListener('click', function (e) {
         });
     }
 });
+// Bấm vào item trong dropdown thì đóng dropdown
+document.querySelectorAll('.has-dropdown .dropdown a').forEach(link => {
+    link.addEventListener('click', function () {
+        document.querySelectorAll('.has-dropdown .dropdown').forEach(d => {
+            d.style.display = 'none';
+        });
+    });
+});
