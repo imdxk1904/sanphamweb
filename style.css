@@ -116,12 +116,12 @@ hr { display: none; }
     font-size: 13px;
     font-family: sans-serif;
     outline: none;
-    width: 180px;
+    width: 140px;
     transition: background 0.2s, width 0.3s;
 }
 
 .navbar-search input::placeholder { color: rgba(255, 255, 255, 0.6); }
-.navbar-search input:focus { background: rgba(255, 255, 255, 0.22); width: 220px; }
+.navbar-search input:focus { background: rgba(255, 255, 255, 0.22); width: 170px; }
 
 .navbar-search button {
     position: absolute;
@@ -477,8 +477,8 @@ section[id]::before {
 }
 
 .footer-logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     margin: 0 auto 12px;
     display: block;
@@ -524,7 +524,7 @@ section[id]::before {
    RESPONSIVE - Màn hình tablet (≤ 900px)
    ================================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     .navbar-menu,
     .navbar-search,
     .navbar-cart { display: none; }
@@ -607,4 +607,51 @@ section[id]::before {
 header > nav li.has-dropdown:last-child .dropdown {
     left: auto;
     right: 0;
+}
+/* ================================================
+   PRODUCT CARD - NÚT GIỎ HÀNG & BADGE GIẢM GIÁ
+   ================================================ */
+
+.product-card {
+    position: relative; /* để badge định vị được */
+}
+
+/* --- Badge % giảm giá --- */
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ff3f34;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* --- Nút thêm vào giỏ hàng --- */
+.btn-add-cart {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 9px 0;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-add-cart:hover {
+    background: #e05e00;
+    transform: translateY(-1px);
+}
+
+.btn-add-cart:active {
+    transform: translateY(0);
 }
