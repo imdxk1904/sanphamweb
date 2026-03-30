@@ -603,3 +603,8 @@ section[id]::before {
         font-size: 13px;
     }
 }
+/* Dropdown item cuối căn về bên phải */
+header > nav li.has-dropdown:last-child .dropdown {
+    left: auto;
+    right: 0;
+}
