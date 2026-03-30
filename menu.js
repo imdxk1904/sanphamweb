@@ -121,3 +121,30 @@ function setupSearch() {
 
 // Khởi chạy chức năng tìm kiếm
 setupSearch();
+// ================================================
+// DROPDOWN MOBILE - Toggle bằng tap thay vì hover
+// ================================================
+
+document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        if (window.innerWidth > 900) return;
+
+        e.preventDefault();
+        const dropdown = this.parentElement.querySelector('.dropdown');
+        const isOpen = dropdown.style.display === 'block';
+
+        document.querySelectorAll('.has-dropdown .dropdown').forEach(d => {
+            d.style.display = 'none';
+        });
+
+        dropdown.style.display = isOpen ? 'none' : 'block';
+    });
+});
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.has-dropdown')) {
+        document.querySelectorAll('.has-dropdown .dropdown').forEach(d => {
+            d.style.display = 'none';
+        });
+    }
+});
