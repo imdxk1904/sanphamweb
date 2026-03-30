@@ -13,7 +13,7 @@ function toggleDrawer() {
 // CATEGORY NAV - Highlight link đang active
 // ================================================
 
-const navLinks = document.querySelectorAll('body > nav a');
+const navLinks = document.querySelectorAll('header > nav a');
 const sections = document.querySelectorAll('section[id]');
 
 // Click vào link: bỏ active tất cả, đặt active cho link vừa bấm
