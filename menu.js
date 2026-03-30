@@ -477,8 +477,8 @@ section[id]::before {
 }
 
 .footer-logo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     margin: 0 auto 12px;
     display: block;
